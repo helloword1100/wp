@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-gray ml-5">
+        
+        <a class="navbar-brand" href="#">
+            <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+          </a>
+        
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Search <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact us</a>
+              </li>
+   
+        </div>
+      </nav>
+<!-- buttons     -->
+
+<div class="filter_buttons">
+<!-- location -->
+    <div class="location">
+        <label for=""><b>Location</b></label>
+       
+        
+     <span class="style_location">
+        <i class="fa fa-search" aria-hidden="true"></i><input type="text" name="" id="searchlocation" placeholder="Cities, regions, ZIP, country" list="searchlocations">
+       
+
+<!-- Datalist for autocomplete options -->
+<datalist id="searchlocations"></datalist>
+        
+        <select name="km" id="option_km" class="km">
+          <option value="0" selected>+ 0Km</option>
+          <option value="1" selected>+ 1Km</option>
+          <option value="2" selected>+ 2Km</option>
+          <option value="3" selected>+ 3Km</option>
+          <option value="4" selected>+ 4Km</option>
+          <option value="5" selected>+ 5Km</option>
+          <option value="7" selected>+ 7Km</option>
+          <option value="10" selected>+ 10Km</option>
+          <option value="15" selected>+ 15Km</option>
+          <option value="20" selected>+ 20Km</option>
+          <option value="30" selected>+ 30Km</option>
+          <option value="50" selected>+ 50Km</option>
+
+
+        </select>
+       </span> 
+       
+
+  </div>
+
+ 
+   
+<!-- price button -->
+<div class="price">
+            <label for=""><b>Price to</b></label>
+    <select name="" id="search" class="select_prices">
+        <option selected>Any</option>
+      </select>
+    </div>
+    <!-- rooms button -->
+    <div class="rooms">
+    <label for=""><b>Rooms from</b></label>
+      <select class="form-select form-select-lg select_rooms" aria-label=".form-select-lg example" id="searchRooms">
+        <option selected>Any</option>
+        <option value="1">1</option>
+        <option value="1.5">1.5</option>
+        <option value="2">2</option>
+        <option value="2.5">2.5</option>
+        <option value="3">3</option>
+        <option value="3.5">3.5</option>
+        <option value="4">4</option>
+        <option value="4.5">4.5</option>
+        <option value="5">5</option>
+        <option value="5.5">5.5</option>
+        <option value="6">6</option>
+        <option value="6.5">6.5</option>
+        <option value="7">7</option>
+        <option value="7.5">7.5</option>
+        <option value="8">8</option>
+        
+      </select>
+
+    </div>
+
+     <!-- filter button -->
+<span class="filter_form">
+  
+  <button type="button" class="filter_button" data-toggle="modal" data-target="#exampleModal">
+    <i class="fa-solid fa-sliders"></i> More filters
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title mr-2" id="exampleModalLabel"><b>More filters</b></h5>
+          <button type="reset" class="reset" id="reset1">Reset all filters</button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <form action="">
+          <button type="reset" class="reset none" id="reset2">Reset all filters</button> 
+          <div class="location ">
+            <label for=""><b>Location</b></label>
+           
+            
+         <span class="style_location_form ">
+            <i class="fa fa-search" aria-hidden="true"></i><input type="text" name="" id="searchlocation_">
+            
+            <select name="km" id="option_km" class="km">
+              <option value="0" selected>+ 0Km</option>
+              <option value="1" selected>+ 1Km</option>
+              <option value="2" selected>+ 2Km</option>
+              <option value="3" selected>+ 3Km</option>
+              <option value="4" selected>+ 4Km</option>
+              <option value="5" selected>+ 5Km</option>
+              <option value="7" selected>+ 7Km</option>
+              <option value="10" selected>+ 10Km</option>
+              <option value="15" selected>+ 15Km</option>
+              <option value="20" selected>+ 20Km</option>
+              <option value="30" selected>+ 30Km</option>
+              <option value="50" selected>+ 50Km</option>
+    
+    
+            </select>
+           </span> 
+           
+    
+      </div>
+          <div class="search_in mt-4">
+            <label for=""><b>Search in</b></label>
+            <span class="style_search_in">
+               <select class="form-control" id="select_buy_rent" class="style_buy_rent_form">
+                <option id="rent" value="rent">for rent</option>
+                <option id="buy" value="buy">to buy</option>
+              </select>
+            </span> 
+                 </div>
+
+                 <div class="category mt-4">
+                  <label for=""><b>Category</b></label>
+                  <span class="style_search_in">
+                     <select class="form-control" id="category_">
+                      <option value="house">Appartment & house</option>
+                      <option value="Appartment">Appartment</option>
+                      <option value="House,chalet,rustic">House, chalet, rustic</option>
+                      <option value="Furnisheddwelling">Furnished dwelling</option>
+                      <option value="Parking space,garage">Parking space, garage</option>
+                      <option value="Office">Office</option>
+                      <option value="Commercial&industry">Commercial & industry</option>
+                      <option value="Storageroom">Storage room</option>
+
+
+                    </select>
+                  </span> 
+                       </div>
+                       <div class="price_bar mt-4">
+                       <div class="price">
+                        <label for=""><b>Price from</b></label>
+                <select name="" id="price_from" class="price_from">
+                    <option selected>Any</option>
+                  </select>
+                  
+                </div>
+                <div class="price">
+                  <label for=""><b>Price to</b></label>
+          <select name="" id="price_to" class="price_to">
+              <option selected>Any</option>
+            </select>
+            
+          </div>
+              
+              </div>
+              <div class="form-check mt-4">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Only listings with price
+                </label>
+              </div>
+
+<div class="room_from_to mt-4">
+              <div class="rooms">
+                <label for=""><b>Rooms from</b></label>
+                  <select class="form-select form-select-lg select_rooms_form" aria-label=".form-select-lg example" id="rooms_from">
+                    <option selected>Any</option>
+                    <option value="1">1</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                    <option value="3">3</option>
+                    <option value="3.5">3.5</option>
+                    <option value="4">4</option>
+                    <option value="4.5">4.5</option>
+                    <option value="5">5</option>
+                    <option value="5.5">5.5</option>
+                    <option value="6">6</option>
+                    <option value="6.5">6.5</option>
+                    <option value="7">7</option>
+                    <option value="7.5">7.5</option>
+                    <option value="8">8</option>
+                    
+                  </select>
+            
+                </div>
+                <div class="rooms">
+                  <label for=""><b>Rooms to</b></label>
+                    <select class="form-select form-select-lg select_rooms_form_to" aria-label=".form-select-lg example" id="rooms_to">
+                      <option selected>Any</option>
+                      <option value="1">1</option>
+                      <option value="1.5">1.5</option>
+                      <option value="2">2</option>
+                      <option value="2.5">2.5</option>
+                      <option value="3">3</option>
+                      <option value="3.5">3.5</option>
+                      <option value="4">4</option>
+                      <option value="4.5">4.5</option>
+                      <option value="5">5</option>
+                      <option value="5.5">5.5</option>
+                      <option value="6">6</option>
+                      <option value="6.5">6.5</option>
+                      <option value="7">7</option>
+                      <option value="7.5">7.5</option>
+                      <option value="8">8</option>
+                      
+                    </select>
+              
+                  </div>
+                </div>
+
+                <div class="years mt-4">
+<span class="year_from">
+  <label for=""><b>Year built from</b></label>
+  <input type="text" name="" id="year_from">
+</span>
+<span class="year_to">
+  <label for=""><b>Year built to</b></label>
+  <input type="text" name="" id="year_to">
+</span>
+                </div>
+
+            
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="save_dialog">  <i class="fa fa-search" aria-hidden="true"></i> Results</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</span>
+
+
+    <!-- search button -->
+  
+    <button type="button" class="search_button" id="searchit"><div class="spinner-border text-light roller" role="status">
+      <span class="visually-hidden "></span>
+    </div> </button>
+ 
+
+</div>
+
+
+
+<div class="price_room_filter_div">
+  <select name="" id="lowest_highest_room_filter" class="price_room_filter">
+    <option value="lowest" selected>Price (Lowest first)</option>
+    <option value="highest">Price (Lowest highest)</option>
+    <option value="lowestroom">Rooms (Lowest first)</option>
+    <option value="highestroom">Rooms (highest first)</option>
+    <option value="top">Top offers</option>  
+  </select>
+</div>
+
+
+<!-- products -->
+
+    <div class="products">
+      <div class="gallery-wrap" id="gallery_wrap">
+        
+
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/6087ec93d3.js" crossorigin="anonymous"></script>
+
+</body>
+<div></div>
+</html>

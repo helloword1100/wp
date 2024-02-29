@@ -1,0 +1,522 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.price_search_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.select_prices,.select_rooms{
+    border: 1px solid gray;
+  background: none;
+  height: 5vh;
+  width: 11vw;
+  padding: 6px;
+}
+
+.product:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+.filter_buttons{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 2vw;
+    justify-content: center;
+}
+
+.location{
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.price{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+.rooms{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.product {
+    display: flex;
+    margin-top: 3vw;
+}
+
+.product-image {
+    max-width: 200px; /* Maximum width for the image */
+    max-height: 150px; /* Maximum height for the image */
+    width: auto;
+    height: auto;
+}
+
+.product-details {
+    padding-left: 10px; /* Adjust as needed */
+}
+
+.img__thumbnail{
+    height: 30vh;
+}
+.product{
+    border: 1px solid gray;
+  border-radius: 1%;
+  width: 80vw;
+  height: 40vh;
+  gap: 19px;
+
+}
+
+
+.products{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+h4{
+    font-weight: bold;
+}
+
+.style_location{
+    width: 21vw;
+  height: 5vh;
+  background: none;
+  border: 1px solid gray;
+  border-radius: 3%
+}
+
+.style_location input{
+    border: none;
+  width: 13vw;
+  height: 38px;
+}
+
+.style_location i{
+    padding: 8px;
+}
+
+.PREMIUM{
+    width: 7vw;
+  height: 4vh;
+  display: inline-block;
+  background: green;
+  text-align: center;
+  color: white;
+  border-radius: 2px;
+}
+
+.price_and_type{
+    display: flex;
+    gap: 3px;
+
+    margin-top: 1vw;
+}
+
+
+.TOP{
+    width: 4vw;
+  height: 4vh;
+  display: inline-block;
+  background: #08327e;
+  text-align: center;
+  color: white;
+  border-radius: 2px;
+}
+
+.STANDARD{
+    width: 7vw;
+    height: 4vh;
+    display: inline-block;
+    background: yellow;
+    text-align: center;
+    color: black;
+    border-radius: 2px;
+}
+.meta_data{
+    width: 53vw;
+}
+.text-truncate{
+    width: 54vw;
+  height: 6vh;
+}
+ .search_button{
+    
+    width: 10vw;
+  height: 5vh;
+    background: #e5007d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 9px;
+    border-radius: 5px;
+    border: 1px solid #e5007d;
+    margin-top: 2vw;
+}
+.roller{
+    display: none;
+}
+.filter_button{
+    width: 9vw!important;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #08327e;
+    gap: 9px;
+    border-radius: 5px;
+    border: 1px solid #08327e;
+    outline: #08327e;
+    margin-top: 2vw;
+    height: 5vh;
+}
+.filter_button:hover{
+background-color: lightblue;
+}
+.reset{
+    background: none;
+  border: none;
+  color: #08327e;
+  text-decoration: underline;
+}
+
+.price_bar{
+    display: flex;
+    gap: 23px;
+}
+.room_from_to{
+    display: flex;
+    gap: 22px;
+}
+.years{
+    display: flex;
+    gap: 37px;
+}
+
+.main-info-table {
+    
+    margin-top: 2vw;    
+   
+    font-family: Arial, sans-serif;
+}
+
+.main-info-table th, 
+.main-info-table td {
+  
+    padding: 8px;
+    text-align: left;
+}
+
+.main-info-table th {
+    background-color: #f2f2f2;
+}
+
+.features-list {
+    list-style-type: none;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.features-list li {
+    margin-bottom: 5px;
+}
+
+.features-list li:before {
+    content: "\2022";  /* Bullet character */
+    color: #007bff; /* Bullet color */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+.post-details{
+    width: 87%;
+    margin-top: 4vw;
+  margin-left: 13vw;
+}
+.house_image{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f5f5f5;
+    background-color: #f5f5f5;
+}
+
+.house_image img{
+    width: 35vw;
+}
+.house_title{
+    width: 100%;
+    margin-top: 4px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.house_details{
+    margin-top: 2vw;
+  display: flex;
+  gap: 32px;
+}
+
+.custom_hr{
+    width: 30%;
+  margin-top: 1vw;
+}
+.house_location{
+    margin-top: 3vw;
+}
+.house_location p{
+    margin-top: 9px;
+
+}
+.house_cost{
+    margin-top: 1vw;
+}
+.house_cost table{
+    margin-top: 1vw;
+}
+
+.house_cost table td{
+    width: 12vw;
+}
+
+.main_info{
+    margin-top: 3vw;
+}
+
+.listing_info_table td{
+   margin-top: 2vw;
+}
+.listing_info_table td{
+    width: 8vw;
+}
+.see_number{
+    width: 10vw;
+    height: 36px;
+    background: #1e50ad;
+    color: white;
+    border: 1px solid #1e50ad;
+    border-radius: 8%;
+    font-size: 14px;
+    
+}
+.listing_info_table {
+    margin-top: 3vw;
+}
+
+.none{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+.home_advertisor_contact h2:nth-child(2)
+{
+    margin-top: 4vw;
+}
+.description{
+    margin-top: 3vw;
+}
+.km{
+    width: 5vw;
+  height: 39px;
+  background: none;
+  border: none;
+    border-left-width: medium;
+    border-left-style: none;
+    border-left-color: currentcolor;
+  border-left: 1px solid black;
+ 
+}
+select {
+    cursor: pointer;
+}
+
+
+.modal-header{
+    gap: 15px !important;
+}
+
+.modal-content{
+    width: 36vw!important;
+  border-radius: 3%!important;
+}
+
+.style_location_form input{
+    border: none;
+  width: 26vw;
+  height: 38px;
+}
+.style_location_form{
+    border: 1px solid black;
+}
+
+.style_buy_rent_form{
+    height: 5vh;
+
+}
+
+.price_from{
+    height: 4vh;
+    background: none;
+    border: 1px solid gray;
+    width: 16vw;
+    
+}
+.price_to
+   {
+    height: 4vh;
+    background: none;
+    border: 1px solid gray;
+    width: 16vw;
+
+   }
+
+.select_rooms_form{
+    border: 1px solid gray;
+  background: none;
+  height: 5vh;
+  width: 296px;
+  
+  padding: 6px;
+}
+
+.select_rooms_form_to{
+    border: 1px solid gray;
+  background: none;
+  height: 5vh;
+  width: 18vw;
+  padding: 6px;
+}
+
+.container_post{
+color: black;
+}
+.container_post:hover{
+    color: black;
+    text-decoration: none;
+    }
+
+.pagination{
+    margin-top: 2vw!important;
+    gap: 28px!important;
+}
+.pagination button{
+    width: 6vw;
+  height: 5vh;
+  background: none;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+}
+
+.year_from{
+    display: flex;
+  flex-direction: column;
+}
+
+.year_to{
+    display: flex;
+  flex-direction: column;
+}
+
+.year_from input{
+    width: 15vw;
+    height: 4vh;
+}
+
+
+.year_to input{
+   width: 340px;
+   height: 4vh;
+}
+
+.btn-primary{
+    width: 100% !important;
+  color: white !important;
+  background: #e5007d !important;
+  border-radius: 2% !important;
+  border: none !important;
+}
+
+.carousel{
+    width: 30vw;
+}
+
+    /* Custom styles for carousel control buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    color: black; /* Set button color to black */
+    background-color: white; /* Set background color to white */
+    border-radius: 50%; /* Make border circular */
+    width: 40px; /* Set width */
+    height: 40px; /* Set height */
+    margin-top: 9vw;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; /* Set icon color to black */
+    border-radius: 50%; /* Make icon circular */
+    width: 20px; /* Set icon width */
+    height: 20px; /* Set icon height */
+}
+.total_images_count{
+    margin-top: -2vw;
+  margin-left: 24vw;
+  background: white;
+  border: 1px solid white;
+  z-index: 4;
+  position: absolute;
+  width: 3vw;
+  text-align: center;
+  border-radius: 12%;
+}
+
+.price_room_filter_div{
+    display: flex;
+    justify-content: end;
+    margin-right: 11vw;
+    margin-top: 9vw;
+}
+
+.price_room_filter{
+    cursor: pointer;
+    width: 11vw;
+    height: 5vh;
+    background: none;
+    border: 1px solid black;
+    border-radius: 4%;
+    text-align: center;
+
+}
+
+.gallery_wrap{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 41vw;
+  background-color: #f5f5f5;
+}
+
+.description_arrow_left{
+    margin-left: 13vw;
+  margin-top: 16vw;
+
+}
+.hide{
+    display: none;
+}
+
+.custom_right{
+    margin-right: 47vw;
+  margin-top: 17vw;
+}
