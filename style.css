@@ -578,7 +578,7 @@ color: black;
   }
   .custom_right {
     margin-right: 0; /* Adjust as needed */
-    margin-top: 0; /* Adjust as needed */
+    margin-top: 60vw;
 }
 
 .carousel {
@@ -622,6 +622,10 @@ margin-top: -11vw;
   margin-left: 66vw;
         width: 10vw;
     }
-
+.description_arrow_left{
+    margin-left: 0vw;
+  margin-top: 58vw;
+}
+    
   
 }
