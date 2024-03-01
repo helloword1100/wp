@@ -615,6 +615,10 @@ color: black;
     width: auto;
     margin-top: 24vw;
 }
+    .total_images_count{
+margin-top: -11vw;
+  margin-left: 66vw;
+    }
 
   
 }
