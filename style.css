@@ -630,6 +630,10 @@ margin-top: -11vw;
   margin-top: 58vw;
 }.see_number {
   width: 28vw;}
-    
+
+    .carousel-control-next{
+margin-top: 23vw!important;
+        
+    }
   
 }
