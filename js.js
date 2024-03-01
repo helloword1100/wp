@@ -70,7 +70,7 @@ output.innerHTML += `
     <i class="fas fa-chevron-right" ></i>
     </a>
     </div>
-
+    <div class="main_content">
 <h1 class="house_title ">"${title}"</h1>
 <div class="house_details">
     <span class="house_rent">
@@ -166,6 +166,7 @@ output.innerHTML += `
             <td>${reference}</td>
         </tr>
     </table>
+</div>
 </div>
 `;
 
