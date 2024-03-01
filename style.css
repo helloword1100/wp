@@ -605,8 +605,8 @@ color: black;
     
     margin-top: 23vw;
 }
-    ..carousel-control-next{
-        margin-top: 55vw;
+    .carousel-control-next{
+        margin-top: 22vw;
     }
 .gallery_wrap {
    
