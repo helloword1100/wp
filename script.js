@@ -328,7 +328,9 @@ searchit.addEventListener('click', function () {
     } else {
         searchrooms();
     }
-    searchProperties();
+    if (!locationClicked && !roomsClicked) {
+        searchProperties();
+    }
     
 });
 
