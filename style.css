@@ -470,7 +470,7 @@ color: black;
     height: 20px; /* Set icon height */
 }
 .total_images_count{
-    margin-top: -2vw;
+  margin-top: -5vw;
   margin-left: 24vw;
   background: white;
   border: 1px solid white;
