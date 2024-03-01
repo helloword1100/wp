@@ -566,7 +566,9 @@ color: black;
     height: 62vh;
   }
   .meta_data {
-    width: 81vw;
+    width: 74vw;
+    margin-left: 2vw;
+      
   }
   .carousel {
     width: 100%;
