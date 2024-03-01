@@ -2,7 +2,7 @@ let http = new XMLHttpRequest();
 let search = document.getElementById('search');
 let properties = [];
 let searchroom = document.getElementById('searchRooms');
-let searchlocations=document.getElementById('searchlocations');
+let searchlocations = document.getElementById('searchlocations');
 let searchit = document.getElementById('searchit');
 let searchlocation = document.getElementById('searchlocation');
 let buyit = document.getElementById('rent');
@@ -17,44 +17,24 @@ let year_from = document.getElementById('year_from');
 let year_to = document.getElementById('year_to');
 let reset1 = document.getElementById('reset1');
 let reset2 = document.getElementById('reset2');
-let lowest_highest_room_filter=document.getElementById('lowest_highest_room_filter');
-
-
+let lowest_highest_room_filter = document.getElementById('lowest_highest_room_filter');
 
 let currentPage = 1;
 const postsPerPage = 10;
 
-
-
-// Update the event listener to trigger the filtering function
 lowest_highest_room_filter.addEventListener('change', function() {
-    // Get the selected option value
     let option = lowest_highest_room_filter.value;
-
-    // Check if the selected option is "lowest"
     if (option === "lowest") {
-        // Sort the properties by price
         sortByLowestPrice();
-    }
-    else if(option==="highest")
-    {
+    } else if (option === "highest") {
         sortByHighestPrice();
-    }
-    else if(option==="lowestroom")
-    {
+    } else if (option === "lowestroom") {
         sortByLowestRooms();
-    }
-    else if(option==="highestroom")
-    {
+    } else if (option === "highestroom") {
         sortByHighestRooms();
+    } else if (option === "top") {
+        filterTopOffers();
     }
-    else if(option==="top")
-    {
-        filterTopOffers() ;
-    }
-
-    
-    // Add more conditions for other filtering options if needed
 });
 
 function filterTopOffers() {
@@ -63,52 +43,40 @@ function filterTopOffers() {
     });
     displayPropertiesWithPagination(filteredProperties);
 }
+
 function sortByLowestPrice() {
-    // Sort the filtered properties by price in ascending order
     properties.sort((a, b) => {
         let priceA = a.listing.prices.buy ? a.listing.prices.buy.price || a.listing.prices.rent.gross : Infinity;
         let priceB = b.listing.prices.buy ? b.listing.prices.buy.price || b.listing.prices.rent.gross : Infinity;
         return priceA - priceB;
     });
-
-    // Display sorted properties
     displayPropertiesWithPagination(properties);
 }
+
 function sortByHighestPrice() {
-    // Sort the filtered properties by price in descending order
     properties.sort((a, b) => {
         let priceA = a.listing.prices.buy ? a.listing.prices.buy.price || a.listing.prices.rent.gross : -Infinity;
         let priceB = b.listing.prices.buy ? b.listing.prices.buy.price || b.listing.prices.rent.gross : -Infinity;
         return priceB - priceA;
     });
-
-    // Display sorted properties
     displayPropertiesWithPagination(properties);
 }
 
 function sortByLowestRooms() {
-    // Sort the filtered properties by number of rooms in ascending order
     properties.sort((a, b) => {
         let roomsA = a.listing.characteristics && a.listing.characteristics.numberOfRooms ? parseFloat(a.listing.characteristics.numberOfRooms) : Infinity;
         let roomsB = b.listing.characteristics && b.listing.characteristics.numberOfRooms ? parseFloat(b.listing.characteristics.numberOfRooms) : Infinity;
         return roomsA - roomsB;
     });
-
-    // Display sorted properties
     displayPropertiesWithPagination(properties);
 }
 
-
-
 function sortByHighestRooms() {
-    // Sort the filtered properties by number of rooms in ascending order
     properties.sort((a, b) => {
         let roomsA = a.listing.characteristics && a.listing.characteristics.numberOfRooms ? parseFloat(a.listing.characteristics.numberOfRooms) : Infinity;
         let roomsB = b.listing.characteristics && b.listing.characteristics.numberOfRooms ? parseFloat(b.listing.characteristics.numberOfRooms) : Infinity;
         return roomsB - roomsA;
     });
-
-    // Display sorted properties
     displayPropertiesWithPagination(properties);
 }
 
@@ -124,7 +92,6 @@ save_dialog.addEventListener('click', function () {
 function searchByYearRange() {
     let selectedYearFrom = parseInt(year_from.value);
     let selectedYearTo = parseInt(year_to.value);
-
     let filteredProperties = properties.filter(property => {
         if (property && property.listing && property.listing.characteristics && property.listing.characteristics.yearBuilt) {
             let yearBuilt = parseInt(property.listing.characteristics.yearBuilt);
@@ -132,14 +99,12 @@ function searchByYearRange() {
         }
         return false;
     });
-
     displayPropertiesWithPagination(filteredProperties);
 }
 
 function searchByRoomsRange() {
     let selectedRoomsFrom = parseFloat(rooms_from.value);
     let selectedRoomsTo = parseFloat(rooms_to.value);
-
     let filteredProperties = properties.filter(property => {
         if (property && property.listing && property.listing.characteristics && property.listing.characteristics.numberOfRooms) {
             let numberOfRooms = parseFloat(property.listing.characteristics.numberOfRooms);
@@ -147,14 +112,12 @@ function searchByRoomsRange() {
         }
         return false;
     });
-
     displayPropertiesWithPagination(filteredProperties);
 }
 
 function searchByPriceRange() {
     let selectedPriceFrom = parseInt(price_from.value);
     let selectedPriceTo = parseInt(price_to.value);
-
     let filteredProperties = properties.filter(property => {
         let price = 0;
         if (property && property.listing && property.listing.prices) {
@@ -167,7 +130,6 @@ function searchByPriceRange() {
         }
         return false;
     });
-
     displayPropertiesWithPagination(filteredProperties);
 }
 
@@ -179,14 +141,10 @@ function search_location() {
     displayPropertiesWithPagination(filteredProperties);
 }
 
-// ADDING SEARCH ARRAY 
-
 function generateOptions(selectElement) {
     let options = [];
-
     for (let i = 500; i < 10000; i += 100) {
         let option = document.createElement('option');
-
         if (i > 2000 && i < 3000) {
             i += 100;
             option.textContent = i + " CHF";
@@ -204,7 +162,6 @@ function generateOptions(selectElement) {
             options.push(option);
         }
     }
-
     options.forEach(option => {
         selectElement.appendChild(option);
     });
@@ -215,44 +172,36 @@ generateOptions(price_to);
 generateOptions(search);
 
 search.addEventListener('input', function () {
-    searchProperties();
+    countprice();
 });
 
 searchlocation.addEventListener('change', function () {
-    searchByLocation();
+    checktotallocations();
 });
 
 searchlocation.addEventListener('input', function () {
     let userInput = searchlocation.value.trim().toLowerCase();
     let filteredOptions = [];
-
     if (userInput.length > 0) {
         filteredOptions = properties.filter(property => {
             return property && property.listing && property.listing.address && property.listing.address.street &&
                    property.listing.address.street.toLowerCase().includes(userInput);
         }).map(property => property.listing.address.street);
     }
-
     populateDropdown(filteredOptions);
 });
 
 function populateDropdown(options) {
-    // Clear previous dropdown options
     searchlocations.innerHTML = '';
-
-    // Create and append new options to the dropdown
     options.forEach(optionText => {
         let option = document.createElement('option');
         option.textContent = optionText;
-       
         searchlocations.appendChild(option);
     });
 }
 
-
-
 searchroom.addEventListener('change', function () {
-    searchrooms();
+    countrooms();
 });
 
 http.open('get', 'properties.json', true);
@@ -278,18 +227,18 @@ function searchbuy() {
         return property && property.listing && property.listing.offerType && property.listing.offerType === "BUY";
     });
     displayPropertiesWithPagination(filteredProperties);
-}function searchProperties() {
+}
+
+function searchProperties() {
     let query = search.value.trim().toLowerCase();
     let selectedPrice = parseInt(search.value);
     let filteredProperties = [];
     
     if (isNaN(selectedPrice)) {
-        // If the input is not a number, filter by property type "TOP"
         filteredProperties = properties.filter(property => {
             return property && property.listing && property.listing.listingType && property.listing.listingType.type === "TOP";
         });
     } else {
-        // If the input is a number, filter by price
         filteredProperties = properties.filter(property => {
             if (property && property.listing && property.listing.prices) {
                 let price = 0;
@@ -306,8 +255,6 @@ function searchbuy() {
     displayPropertiesWithPagination(filteredProperties);
 }
 
-
-
 function searchrooms() {
     let filteredProperties = [];
     let rooms = parseFloat(document.getElementById('searchRooms').value);
@@ -317,22 +264,83 @@ function searchrooms() {
     displayPropertiesWithPagination(filteredProperties);
 }
 
+function countlocations() {
+    let selectedPrice = parseInt(search.value);
+    let filteredProperties = [];
+    filteredProperties = properties.filter(property => {
+        if (property && property.listing && property.listing.prices) {
+            let price = 0;
+            if (property.listing.offerType === "RENT" && property.listing.prices.rent) {
+                price = property.listing.prices.rent.gross;
+            } else if (property.listing.offerType === "BUY" && property.listing.prices.buy) {
+                price = property.listing.prices.buy.gross;
+            }
+            return price >= selectedPrice;
+        }
+        return false;
+    });
+    checktotalcount(filteredProperties);
+}
+
+function countrooms() {
+    let filteredProperties = [];
+    let rooms = parseFloat(document.getElementById('searchRooms').value);
+    filteredProperties = properties.filter(property => {
+        return property && property.listing && property.listing.characteristics && property.listing.characteristics.numberOfRooms >= rooms;
+    });
+    checktotalcount(filteredProperties);
+}
+
+function countprice() {
+    let filteredProperties = [];
+    filteredProperties = properties.filter(property => {
+        if (property && property.listing && property.listing.prices) {
+            let price = 0;
+            if (property.listing.offerType === "RENT" && property.listing.prices.rent) {
+                price = property.listing.prices.rent.gross;
+            } else if (property.listing.offerType === "BUY" && property.listing.prices.buy) {
+                price = property.listing.prices.buy.gross;
+            }
+            return price >= selectedPrice;
+        }
+        return false;
+    });
+    checktotalcount(filteredProperties);
+}
+
+function checktotalcount(properties) {
+    let totalCount = properties.length;
+    searchit.innerHTML = `<i class="fa fa-search" aria-hidden="true"></i> ${totalCount} Results `;
+}
+
+function checktotallocations() {
+    let selectedStreet = searchlocation.value.trim().toLowerCase();
+    let filteredProperties = properties.filter(property => {
+        return property && property.listing && property.listing.address && property.listing.address.street && property.listing.address.street.toLowerCase() === selectedStreet;
+    });
+    checktotalcount(filteredProperties);
+}
+
+searchit.addEventListener('click', function () {
+    let inputValue = searchlocation.value.trim().toLowerCase();
+    if (inputValue !== '') {
+        searchByLocation();
+    } else {
+        searchrooms();
+    }
+    searchProperties();
+    
+});
 
 function displayPropertiesWithPagination(properties) {
-    
     let output = "";
     let totalCount = properties.length;
     const totalPages = Math.ceil(totalCount / postsPerPage);
     const startIndex = (currentPage - 1) * postsPerPage;
     const endIndex = Math.min(startIndex + postsPerPage, totalCount);
     searchit.innerHTML = `<i class="fa fa-search" aria-hidden="true"></i> ${totalCount} Results `;
-    
-    // Clear previous listings
     document.querySelector('.products').innerHTML = '';
-
     for (let i = startIndex; i < endIndex; i++) {
-       
-
         let property = properties[i];
         if (property && property.listing && property.listing.prices && property.listing.prices.buy) {
             let price = property.listing.prices.buy.price || property.listing.prices.rent.gross;
@@ -384,15 +392,8 @@ function displayPropertiesWithPagination(properties) {
                             </div>
                         `;
                     }
-                   
-
-                    
-                  
                     let imageUrls = property.listing.localization.de.attachments.map(attachment => attachment.url);
-
-                    // Convert the array of image URLs into a string
                     let encodedImageUrls = encodeURIComponent(JSON.stringify(imageUrls));
-                    
                     output += `
                     <div class="clickable-post">
                         <a class="container_post" href="post-details.html?title=${encodeURIComponent(title)}&price=${encodeURIComponent(price)}&describe=${encodeURIComponent(describe)}&imageUrl=${encodeURIComponent(encodedImageUrls)}&rooms=${encodeURIComponent(rooms)}&living=${encodeURIComponent(living)}&thestreet=${encodeURIComponent(thestreet)}&availableFrom=${encodeURIComponent(availableFrom)}&numberOfFloors=${encodeURIComponent(numberOfFloors)}&year=${encodeURIComponent(year)}&featuresHTML=${encodeURIComponent(featuresHTML)}&reference=${encodeURIComponent(reference)}}&DURL=${encodeURIComponent(DURL)}&contactName=${encodeURIComponent(contactName)}&contactNumber=${encodeURIComponent(contactNumber)}">
@@ -401,7 +402,7 @@ function displayPropertiesWithPagination(properties) {
                                 <div id="carouselExample${i}" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                     
-                                        ${attachments.map((att, index,array) => `
+                                        ${attachments.map((att, index, array) => `
                                             <div class="carousel-item ${index === 0 ? 'active' : ''}">
                                                 <img class="d-block w-100" src="${att.url}" alt="Slide ${index + 1}>
 ">
@@ -436,27 +437,16 @@ function displayPropertiesWithPagination(properties) {
                             </div>
                         </a>
                     </div>`;
-                    
                 }
             }
         }
     }
-    // Display pagination buttons
-    output += `
-        <div class="pagination">
-            <button onclick="previousPage()" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
-            <button onclick="nextPage()" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
-        </div>
-    `;
-    
-    // Append the pagination HTML to '.products' container
     document.querySelector('.products').innerHTML += output;
 }
 
 function truncateWithBr(text, maxLength) {
     let result = "";
     let remainingLength = maxLength;
-
     for (let i = 0; i < text.length; i++) {
         if (text[i] === "<") {
             let endIndex = text.indexOf(">", i);
@@ -473,7 +463,6 @@ function truncateWithBr(text, maxLength) {
             }
         }
     }
-
     return result;
 }
 
@@ -486,5 +475,3 @@ function previousPage() {
     currentPage--;
     displayPropertiesWithPagination(properties);
 }
-
-
