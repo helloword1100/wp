@@ -527,7 +527,7 @@ color: black;
 .carousel {
     width: 38%;/* Set a fixed width for the carousel */
     overflow: hidden; /* Hide any content that extends beyond the carousel */
-    margin-left: -2vw;
+    margin-left: -1vw;
 }
 
 .carousel-inner {
@@ -537,4 +537,84 @@ color: black;
 .carousel-item img {
     width: 100%; /* Set the width of the images to fill the carousel */
     height: auto; /* Maintain aspect ratio */
+}
+
+
+
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    
+  .filter_buttons{
+    display: none;
+  }
+  .price_room_filter{
+    display: none;
+  }
+.responsive_right, .responsive_left{
+    margin-top: 60vw!important;
+    margin: auto;
+}
+
+.main_content{
+    margin-left: 6vw;
+    margin-top: 3vw;
+}
+  .product{
+    margin-top: 1vw;
+    flex-direction: column;
+    height: 62vh;
+  }
+  .meta_data {
+    width: 81vw;
+  }
+  .carousel {
+    width: 100%;
+    margin-top: -5vw;
+    margin-left: 0vw;
+    overflow: visible;
+  }
+  .custom_right {
+    margin-right: 0; /* Adjust as needed */
+    margin-top: 0; /* Adjust as needed */
+}
+
+.carousel {
+    width: 100%; /* Set the width of the carousel to 100% */
+    margin-top: -5vw; /* Adjust as needed */
+    overflow: visible; /* Allow content to overflow */
+}
+
+.carousel-inner {
+    width: auto; /* Set the width of the carousel inner container to auto */
+}
+
+.carousel-item img {
+    max-width: 100%; /* Set the maximum width of carousel images to 100% */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.product {
+    margin-top: 29vw; /* Adjust as needed */
+    flex-direction: column; /* Stack items vertically */
+    height: auto; /* Allow the product div to adjust its height based on content */
+}
+.carousel-control-prev, .carousel-control-next {
+    
+    margin-top: 23vw;
+}
+.gallery_wrap {
+   
+    width: 99vw;
+   
+  }
+  .post-details{
+    margin-left: auto;
+  }
+  .post-details {
+    width: auto;
+    margin-top: 24vw;
+}
+
+  
 }
