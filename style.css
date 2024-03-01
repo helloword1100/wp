@@ -601,10 +601,13 @@ color: black;
     flex-direction: column; /* Stack items vertically */
     height: auto; /* Allow the product div to adjust its height based on content */
 }
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev {
     
     margin-top: 23vw;
 }
+    ..carousel-control-next{
+        margin-top: 55vw;
+    }
 .gallery_wrap {
    
     width: 99vw;
