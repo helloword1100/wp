@@ -443,6 +443,14 @@ function displayPropertiesWithPagination(properties) {
             }
         }
     }
+     // Display pagination buttons
+    output += `
+        <div class="pagination">
+            <button onclick="previousPage()" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
+            <button onclick="nextPage()" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
+        </div>
+    `;
+    
     document.querySelector('.products').innerHTML += output;
 }
 
