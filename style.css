@@ -435,7 +435,7 @@ color: black;
 
 
 .year_to input{
-   width: 261px;
+   width: 340px;
    height: 4vh;
 }
 
@@ -519,4 +519,22 @@ color: black;
 .custom_right{
     margin-right: 47vw;
   margin-top: 17vw;
+}
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+}
+.carousel {
+    width: 38%;/* Set a fixed width for the carousel */
+    overflow: hidden; /* Hide any content that extends beyond the carousel */
+    margin-left: -1vw;
+}
+
+.carousel-inner {
+    width: 100%; /* Set the width of the carousel inner container */
+}
+
+.carousel-item img {
+    width: 100%; /* Set the width of the images to fill the carousel */
+    height: auto; /* Maintain aspect ratio */
 }
